@@ -1,0 +1,136 @@
+@import url('../root.css');
+
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  background-color: var(--clr-neut-off-white);
+  color: var(--clr-neut-off-black);
+  font-family: 'Poppins', sans-serif;
+  display: grid;
+  place-items: center;
+}
+
+p {
+  margin: 0;
+}
+
+.padding-container {
+  max-width: 840px;
+  min-width: 840px;
+  max-height: 652px;
+  min-height: 652px;
+  background-color: var(--clr-neut-white);
+  border-radius: 32px;
+  border-bottom-right-radius: 196px;
+}
+
+.container {
+  margin: 56px;
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+}
+
+.container form {
+  display: flex;
+}
+
+.input-all {
+  display: flex;
+  flex-grow: 1;
+  gap: 16px;
+  padding-bottom: 32px;
+  border-bottom: solid 1px var(--clr-neut-off-white);
+}
+
+.input-all input {
+  border: solid 1px var(--clr-neut-off-white);
+  border-radius: 8px;
+  font-size: 32px;
+  font-weight: 800;
+
+  max-width: 126px;
+  padding: 16px;
+  margin-top: 8px;
+}
+
+.input-all input:hover {
+  cursor: pointer;
+}
+
+.input-all input:focus,
+.container button:focus {
+  outline: none;
+}
+
+.input-all input:hover,
+.input-all input:focus {
+  border-color: var(--clr-prim-purple);
+}
+
+.input-all input[data-autocompleted] {
+  background-color: var(--clr-neut-white) !important;
+}
+
+.input-all label {
+  color: var(--clr-neut-smokey-grey);
+  font-weight: bold;
+  font-size: 14px;
+  letter-spacing: 3px;
+}
+
+.input-all p {
+  margin-top: 8px;
+  height: 14px;
+  vertical-align: bottom;
+  font-weight: normal;
+  font-size: 14px;
+  font-style: italic;
+  letter-spacing: 0;
+}
+
+.container button {
+  background-color: var(--clr-prim-purple);
+
+  margin-left: auto;
+  align-self: flex-end;
+  width: 96px;
+  height: 96px;
+
+  position: relative;
+  transform: translateY(50%);
+
+  border: none;
+  border-radius: 50%;
+}
+
+.container button:hover,
+.container button:focus {
+  cursor: pointer;
+  background-color: var(--clr-neut-off-black);
+}
+
+.error p,
+.error label {
+  color: red;
+}
+
+.error input {
+  border-color: red;
+}
+
+.result {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  font-size: 105px;
+  font-weight: 800;
+  font-style: italic;
+  line-height: 105px;
+}
+
+.result-number {
+  color: var(--clr-prim-purple);
+}
