@@ -9,10 +9,5 @@
   --clr-neut-smokey-grey: hsl(0, 1%, 44%);
   --clr-neut-off-black: hsl(0, 0%, 8%);
 
-  --sz-mobile: 375px;
-  --sz-desktop: 1440px;
-}
-
-body {
-  margin: 0;
+  --fnt-fam: 'Poppins', sans-serif;
 }
