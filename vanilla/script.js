@@ -15,19 +15,16 @@ const state = {
   day: {
     node: document.querySelector('label[for="input-day"] p'),
     value: inputDay.value,
-    isUsed: false,
     error: '',
   },
   month: {
     node: document.querySelector('label[for="input-month"] p'),
     value: inputMonth.value,
-    isUsed: false,
     error: '',
   },
   year: {
     node: document.querySelector('label[for="input-year"] p'),
     value: inputYear.value,
-    isUsed: false,
     error: '',
   },
 };
@@ -43,7 +40,7 @@ function setState(stateUpdates) {
 function renderInputError() {
   if (state.errorCommon.error) {
     {
-      state.day.node.textContent = state.error.value;
+      state.day.node.textContent = state.errorCommon.error;
       inputAll.classList.add('error');
     }
   } else if (
@@ -100,7 +97,7 @@ form.addEventListener('submit', e => {
       : !isBeforeToday
       ? 'Must be in the past'
       : '';
-    setState({ errorCommon: { error: error } });
+    setState({ errorCommon: { error } });
     resetResult();
     return;
   }
@@ -193,6 +190,14 @@ function updateObject(object, updates) {
   }
 }
 
+/**
+ * Calculates the difference in days, months, and years between two dates.
+ *
+ * @param {Date} from - The starting date.
+ * @param {Date} [to=new Date()] - The ending date. Defaults to the current date if not provided.
+ * @returns {Object} An object containing the difference in days, months, and years.
+ * @throws {Error} If the 'from' date is after the 'to' date.
+ */
 function calcDateDifference(from, to = new Date()) {
   function nextDay(date) {
     return new Date(date).setDate(date.getDate() + 1);
